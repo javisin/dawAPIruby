@@ -1,0 +1,23 @@
+<div class="">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to "Menú", admin_path %>
+    </li>
+    <li class="breadcrumb-item active">Inicio de sesión</li>
+  </ol>
+</div>
+<div class="container text-center">
+  <section class="mb-4 bg-light pb-3 rounded border border-dark px-5 mt-5">
+
+    <h1 class="font-weight-bold my-4">Login</h1>
+    <%= form_for :user, url: admin_checkLogin_path do |f|%>
+      <%= f.label :email, 'Correo electrónico:' %> <br>
+      <%= f.text_field :email %> <br><br>
+      <%= f.label :password, 'Contraseña:' %> <br>
+      <%= f.password_field :password %> <br>
+      <br>
+      <%= f.submit %> <br>
+    <% end %>
+
+  </section>
+</div>

@@ -1,0 +1,29 @@
+<h1>Users#new</h1>
+<%= form_for @user, url: users_path do |f| %>
+  <%= f.label :name, 'Nombre:' %>
+  <%= f.text_field :name %> <br>
+  <%= f.label :surname, 'Apellidos:' %>
+  <%= f.text_field :surname %> <br>
+  <%= f.label :username, 'Nombre de usuario:' %>
+  <%= f.text_field :username %> <br>
+  <%= f.label :email, 'Correo electrónico:' %>
+  <%= f.text_field :email %> <br>
+  <%= f.label :password, 'Contraseña:' %>
+  <%= f.password_field :password %> <br>
+  <%= f.label :kind, 'Tipo:' %>
+  <%= f.radio_button :kind, 1 %>
+  <%= f.label :kind, "1 (Administrador)" %>
+  <%= f.radio_button :kind, 2, :checked => true %>
+  <%= f.label :kind, "2 (Usuario sin privilegios)" %> <br>
+  <%= f.label :country, 'País (Opcional):' %>
+  <%= f.text_field :country %> <br>
+  <%= f.label :street, 'Dirección (Opcional):' %>
+  <%= f.text_field :street %> <br>
+  <%= f.label :postalcode, 'Código Postal (Opcional):' %>
+  <%= f.text_field :postalcode %> <br>
+  <%= f.label :phone, 'Número de teléfono (Opcional):' %>
+  <%= f.text_field :phone %> <br>
+
+  <%= f.submit %> <br>
+  <%= link_to 'Back', :back %>
+<% end %>

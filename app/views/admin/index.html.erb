@@ -1,0 +1,84 @@
+<div class="">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to "Menú", admin_path %>
+    </li>
+    <li class="breadcrumb-item active">Vista general</li>
+    <div class="ml-auto"><%= link_to "Cerrar sesión", admin_logOut_path, :class => 'text-dark' %></div>
+  </ol>
+</div>
+<div class="container">
+  <section class="mb-4 bg-light pb-3 rounded border border-dark px-5 mt-5">
+
+    <h1 class="font-weight-bold my-4">Usuarios</h1>
+    <table class="table mt-3">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Username</th>
+        <th scope="col">User</th>
+        <th scope="col">Email</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <th scope="row"><%= user.id %></th>
+          <td><%= link_to user.username, editUser_path(user.id) %></td>
+          <td><%= user.name %> <%= user.surname %></td>
+          <td><%= user.email %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <h1 class="font-weight-bold my-4">Productos</h1>
+    <%= link_to 'Crear producto', admin_newProduct_path, :class => 'btn btn-primary active' %>
+    <table class="table mt-3">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Description</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <th scope="row"><%= product.id %></th>
+          <td><%= link_to product.name, editProduct_path(product.id) %></td>
+          <td><%= product.price %></td>
+          <td><%= product.description %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <h1 class="font-weight-bold my-4">Tallas</h1>
+    <%= link_to 'Crear talla', admin_newSize_path, :class => 'btn btn-primary active' %>
+    <table class="table mt-3">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Talla</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Id producto</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @sizes.each do |talla| %>
+        <tr>
+          <th scope="row"><%= talla.id %></th>
+          <td><%= talla.value %></td>
+          <td><%= talla.quantity %></td>
+          <td><%= talla.product_id %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </section>
+</div>

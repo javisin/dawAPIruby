@@ -1,0 +1,75 @@
+<div class="">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to "Menú", admin_path %>
+    </li>
+    <li class="breadcrumb-item active">Crear producto</li>
+    <div class="ml-auto"><%= link_to "Cerrar sesión", admin_logOut_path, :class => 'text-dark' %></div>
+  </ol>
+</div>
+<div class="container">
+  <section class="mb-4 bg-light pb-3 rounded border border-dark px-5 mt-5">
+
+    <h1 class="font-weight-bold my-4">Crear producto</h1>
+    <%= form_for :product, url: api_v1_products_path, method: :post do |f |%>
+      <div class="form-group row">
+      <%= f.label :name, 'Nombre:', :class => 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :name, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row">
+      <%= f.label :brand, 'Marca:', :class => 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :brand, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row">
+      <%= f.label :description, 'Description:', :class => 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :description, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row">
+      <%= f.label :gender, 'Género:', :class => 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :gender, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row">
+      <%= f.label :colors, 'Colores:', :class => 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :colors, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row">
+      <%= f.label :price, 'Precio:', :class => 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :price, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row">
+      <%= f.label :new, 'Nuevo', :class => 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :new, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row">
+      <%= f.label :trending, 'Tendencia:', :class => 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+          <%= f.text_field :trending, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row">
+      <%= f.label :image, 'Imagen:', :class => 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+          <%= f.file_field :image %>
+        </div>
+      </div>
+
+      <div class="text-center my-4">
+        <%= f.submit 'Guardar producto', :class => 'btn btn-primary active'%>
+      </div>
+    <% end %>
+  </section>
+</div>
