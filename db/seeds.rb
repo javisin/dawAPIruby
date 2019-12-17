@@ -61,7 +61,7 @@ product= Product.create(name: 'Vestido corto', brand: 'Bershka',
                         description: 'Vestido corto blanco de verano',
                         gender: 'female', colors: 'blanco', price: '39,99€',
                         new: '1', trending: '1')
-product.image.attach(io: File.open("#{Rails.root}/app/images/vestidoBlanco.jpg"), filename: "vestidoBlanco.jpg")
+product.image.attach(io: File.open("#{Rails.root}/app/images/VestidoBlanco.jpg"), filename: "VestidoBlanco.jpg")
 
 product= Product.create(name: 'Polo',brand: 'Bershka',description: 'Polo',colors: 'rojo',gender: 'male',
                         price: "49,99€", new: 0,trending: 1)
