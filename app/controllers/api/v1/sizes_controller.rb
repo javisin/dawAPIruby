@@ -6,7 +6,7 @@ module Api
                 if size.save
                     redirect_to admin_path
                 else
-                    render json: {status: 'ERROR', message:'size not saved', data:size.errors},status: :unprocessable_entity
+                    render json: {status: 'ERROR', message:'Size not saved', data:size.errors},status: :unprocessable_entity
                 end
             end
 
