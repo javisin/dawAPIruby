@@ -29,11 +29,7 @@ module V1
     def create
       product = Product.new(product_params)
       if product.save
-        if session[:kind] != 1
-          render json: { status: 'SUCCESS', message:'product saved successfully', data: product }, status: :created
-        else
-          redirect_to admin_path
-        end
+        redirect_to admin_path
       else
         render json: { status: 'ERROR', message: 'product not created', data: product.errors }, status: :unprocessable_entity
       end

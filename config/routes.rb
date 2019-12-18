@@ -32,7 +32,8 @@ Rails.application.routes.draw do
       namespace 'v1' do
         resources :users, only:[:create, :destroy, :show, :index]
         post '/users/:id', to: 'users#update'
-        resources :products
+        resources :products, only:[:create, :destroy, :show, :index]
+        post '/products/:id', to: 'products#update'
         resources :sizes
         post '/login', to: 'users#login'
         get '/trending', to: 'products#trending'
